@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "deploy": "ng build --prod --base-href 'https://nivite.github.io/n00001/' && ngh --dir=dist/n00001",
+    "build": "ng build --prod",
+    "deploy": "firebase deploy",
+    "deploy:demo": "ng build --prod --base-href 'https://nivite.github.io/n00001/' && ngh --dir=dist/n00001",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
