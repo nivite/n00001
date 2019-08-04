@@ -13,7 +13,7 @@ body {
   padding-bottom: 100px;
 }
 
-* {
+.invitewrap {
   text-align: center;
   color: #d2e8de;
   user-select: none;
@@ -29,10 +29,19 @@ hr {
   text-shadow: 3px 3px 10px #1f8c5a;
 }
 
+.hostName {
+  font-size: 30px;
+  color: #297046;
+  font-weight: bold;
+  @extend .text-shadow;
+  animation: greenglow 750ms ease-in-out infinite alternate;
+}
+
 .shortMsg {
   font-size: 190px;
   font-family: Tangerine, Georgia, serif;
   @extend .text-shadow;
+  color: #7ee2a7;
   animation: glow 1s ease-in-out infinite alternate;
 }
 
@@ -41,15 +50,21 @@ hr {
   font-family: Barriecito, Georgia, serif;
   margin-bottom: 40px;
   @extend .text-shadow;
+
 }
 
-.venue-wrap,
-.time-wrap {
-  position: absolute;
-  bottom: 60px;
+.details {
   font-family: Righteous;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+
+  .venue-wrap,
+  .time-wrap {
+    position: absolute;
+    bottom: 60px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.4);
+  }
 }
 
 .venue-wrap {
@@ -63,6 +78,40 @@ hr {
 .sub-heading {
   font-size: 4em;
   text-align: left;
+}
+
+@media (max-width: 575.98px) {
+  .shortMsg {
+    font-size: 95px;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .sub-heading {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .venue-wrap {
+      border-bottom: 1px solid #d2e8de;
+    }
+
+    .venue-wrap,
+    .time-wrap {
+      position: relative;
+      text-align: left;
+      margin-right: 15px;
+      padding: 5px;
+      bottom: 45px;
+    }
+  }
 }
 
 /*glow from https://codepen.io/FelixRilling/pen/qzfoc*/
@@ -83,5 +132,25 @@ hr {
 
   to {
     text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 3px #fff, 0 0 4px #FFDD1B, 0 0 7px #FFDD1B, 0 0 8px #FFDD1B, 0 0 10px #FFDD1B, 0 0 15px #FFDD1B;
+  }
+}
+
+@keyframes greenglow {
+  from {
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 6px #fff, 0 0 8px #3D8D34, 0 0 14px #3D8D34, 0 0 16px #3D8D34, 0 0 20px #3D8D34, 0 0 30px #3D8D34;
+  }
+
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 3px #fff, 0 0 4px #3D8D34, 0 0 7px #3D8D34, 0 0 8px #3D8D34, 0 0 10px #3D8D34, 0 0 15px #3D8D34;
+  }
+}
+
+@-webkit-keyframes greenglow {
+  from {
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 6px #fff, 0 0 8px #3D8D34, 0 0 14px #3D8D34, 0 0 16px #3D8D34, 0 0 20px #3D8D34, 0 0 30px #3D8D34;
+  }
+
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 3px #fff, 0 0 4px #3D8D34, 0 0 7px #3D8D34, 0 0 8px #3D8D34, 0 0 10px #3D8D34, 0 0 15px #3D8D34;
   }
 }
